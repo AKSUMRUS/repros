@@ -1,0 +1,7 @@
+# {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox: Leak:false NetInjection:false NetDevices:false NetReset:false Cgroups:false BinfmtMisc:false CloseFDs:false KCSAN:false DevlinkPCI:false USB:false VhciInjection:false Wifi:false IEEE802154:true Sysctl:true UseTmpDir:true HandleSegv:true Repro:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}
+syz_mount_image$fuse(0x0, &(0x7f0000000340)='./file0\x00', 0x0, 0x0, 0x0, 0x0, 0x0)
+pipe2$9p(&(0x7f0000000140)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x0)
+write$P9_RVERSION(r1, &(0x7f0000000000)=ANY=[@ANYBLOB="1500000007ffff"], 0x7)
+r2 = syz_open_dev$cec(&(0x7f0000000180), 0x0, 0x2)
+mount$9p_fd(0x0, &(0x7f0000000080)='./file0\x00', &(0x7f00000000c0), 0x0, &(0x7f0000000240)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r2}}) (fail_nth: 23)
+write$P9_RUNLINKAT(r1, &(0x7f0000000040)={0x7}, 0x7)
